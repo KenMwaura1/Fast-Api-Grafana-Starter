@@ -9,11 +9,11 @@ services:
     ports:
       - 9090:9090
     volumes:
-      - prometheus_data:/prometheus
+      - ./prometheus_data/prometheus.yml:/etc/prometheus/prometheus.yml
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
     networks:
-      - prometheus-net
+      - host
 
   grafana:
     image: grafana/grafana
@@ -23,13 +23,19 @@ services:
     volumes:
       - grafana_data:/var/lib/grafana
     networks:
-      - prometheus-net
+      - host
 
 networks:
-  prometheus-net:
+  host:
+    external: true
 
 volumes:
   prometheus_data:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: ./prometheus_data
   grafana_data:
 
 
