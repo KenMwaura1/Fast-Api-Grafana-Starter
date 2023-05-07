@@ -5,7 +5,9 @@
 
 [![Twitter](https://badgen.net/badge/icon/twitter?icon=twitter&label=Follow&on)](https://twitter.com/Ken_Mwaura1)
 
-This repository contains code for asynchronous example api using the [Fast Api framework](https://fastapi.tiangolo.com/) ,Uvicorn server and Postgres Database to perform crud operations on notes. It also contains a docker-compose file to spin up the containers locally. This is a starter project for anyone looking to get started with Fast Api and Grafana for monitoring using Prometheus.
+This repository contains code for asynchronous example api using the [Fast Api framework](https://fastapi.tiangolo.com/) ,Uvicorn server and Postgres Database to perform crud operations on notes. It also contains a docker-compose file to spin up the containers locally. This is a starter project for anyone looking to get started with Fast Api and Grafana for monitoring using Prometheus. 
+
+This project is a fork of my [Fast-Api-example](https://github.com/KenMwaura1/Fast-Api-example) repository. The only difference is that this repository uses [Grafana](https://grafana.com/) for monitoring using [Prometheus](https://prometheus.io/) and [Loki](https://grafana.com/oss/loki/) for logging. The [Grafana](https://grafana.com/) dashboard is available in the [grafana](grafana) folder.
 
 ![Fast-api](images/fast-api-scrnsht.png)
 
