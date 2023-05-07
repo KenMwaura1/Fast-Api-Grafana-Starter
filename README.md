@@ -1,26 +1,28 @@
-# FastAPI example app
+# FastAPI Grafana Starter Project
 
 ![fastapi-0.92.0-informational](https://img.shields.io/badge/fastapi-0.92.0-informational) [![CodeQL](https://github.com/KenMwaura1/Fast-Api-example/actions/workflows/codeql.yml/badge.svg)](https://github.com/KenMwaura1/Fast-Api-example/actions/workflows/codeql.yml)
 [![Docker Compose Actions Workflow](https://github.com/KenMwaura1/Fast-Api-example/actions/workflows/docker-image.yml/badge.svg)](https://github.com/KenMwaura1/Fast-Api-example/actions/workflows/docker-image.yml)
 
 [![Twitter](https://badgen.net/badge/icon/twitter?icon=twitter&label=Follow&on)](https://twitter.com/Ken_Mwaura1)
 
-This repository contains code for asynchronous example api using the [Fast Api framework](https://fastapi.tiangolo.com/) ,Uvicorn server and Postgres Database to perform crud operations on notes.
+This repository contains code for asynchronous example api using the [Fast Api framework](https://fastapi.tiangolo.com/) ,Uvicorn server and Postgres Database to perform crud operations on notes. It also contains a docker-compose file to spin up the containers locally. This is a starter project for anyone looking to get started with Fast Api and Grafana for monitoring using Prometheus. 
+
+This project is a fork of my [Fast-Api-example](https://github.com/KenMwaura1/Fast-Api-example) repository. The only difference is that this repository uses [Grafana](https://grafana.com/) for monitoring using [Prometheus](https://prometheus.io/) and [Loki](https://grafana.com/oss/loki/) for logging. The [Grafana](https://grafana.com/) dashboard is available in the [grafana](grafana) folder.
 
 ![Fast-api](images/fast-api-scrnsht.png)
 
 ## Accompanying Article
 
-Read the full tutorial [here](https://dev.to/ken_mwaura1/getting-started-with-fast-api-and-docker-515)
+--TODO--
 
 ## Installation method 1 (Run application locally)
 
 1. Clone this Repo
 
-   `git clone (https://github.com/KenMwaura1/Fast-Api-example)`
+   `git clone https://github.com/KenMwaura1/Fast-Api-Grafana-Starter`
 2. Cd into the Fast-Api folder
 
-   `cd Fast-Api-example`
+   `cd Fast-Api-Grafana-Starter`
 3. Create a virtual environment
 
    `python3 -m venv venv`
@@ -73,7 +75,7 @@ The is a simple Vue frontend using [vite](https://vitejs.dev/guide/) that was ad
 
 Ensure you have [Node.js](https://nodejs.org/en/) installed. any version above 16 should work.
 
-While inside the root folder `Fast-Api-example`
+While inside the root folder `Fast-Api-Grafana-Starter`
 
 1. Cd into the `vue-client` folder.
 
@@ -117,11 +119,11 @@ While inside the root folder `Fast-Api-example`
 
 3. Clone this Repo
 
-   `git clone (https://github.com/KenMwaura1/Fast-Api-example)`
+   `git clone https://github.com/KenMwaura1/Fast-Api-Grafana-Starter`
 
 4. Change into the directory
 
-   ```cd Fast-Api-example```
+   ```cd Fast-Api-Grafana-Starter```
 
 5. Use Docker-Compose to spin up containers
 
