@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
+from prometheus_fastapi_instrumentator import Instrumentator
 
 from app.api import notes, ping
 from app.db import engine, metadata, database
@@ -7,6 +8,7 @@ from app.db import engine, metadata, database
 metadata.create_all(engine)
 
 app = FastAPI()
+Instrumentator().instrument(app).expose(app)
 
 origins = [
     "http://localhost",
