@@ -10,8 +10,10 @@ click==8.0.3
 databases==0.5.3
 fastapi==0.92.0
 greenlet==1.1.2
-h11==0.12.0
+h11==0.14.0
+httpcore==0.17.0
 httptools==0.3.0
+httpx==0.24.0
 idna==3.3
 iniconfig==1.1.1
 isort==5.10.0
