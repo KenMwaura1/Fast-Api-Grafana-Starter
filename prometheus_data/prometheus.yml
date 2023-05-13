@@ -32,5 +32,5 @@ scrape_configs:
   static_configs:
   - targets: 
     - localhost:8002
-    - host.docker.internal:8002
+    # - host.docker.internal:8002
     - 0.0.0.0:8002
