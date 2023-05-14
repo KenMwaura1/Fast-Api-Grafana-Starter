@@ -11,6 +11,12 @@ This project is a fork of my [Fast-Api-example](https://github.com/KenMwaura1/Fa
 
 ![Fast-api](images/fast-api-scrnsht.png)
 
+![Grafana](images/grafana-dashboard-1.png)
+
+![Grafana](images/grafana-dashboard-2.png)
+
+![Grafana](images/grafana-dashboard-3.png)
+
 ## Accompanying Article
 
 --TODO--
@@ -19,34 +25,58 @@ This project is a fork of my [Fast-Api-example](https://github.com/KenMwaura1/Fa
 
 1. Clone this Repo
 
-   `git clone https://github.com/KenMwaura1/Fast-Api-Grafana-Starter`
+   ```shell 
+   git clone https://github.com/KenMwaura1/Fast-Api-Grafana-Starter
+   ```
+
 2. Cd into the Fast-Api folder
 
-   `cd Fast-Api-Grafana-Starter`
+   ```shell 
+   cd Fast-Api-Grafana-Starter
+   ```
+
 3. Create a virtual environment
 
-   `python3 -m venv venv`
+   ```shell
+   python3 -m venv venv
+   ```
+
 4. Activate virtualenv
 
-   `source venv/bin/activate`
+   ```shell 
+   source venv/bin/activate
+   ```
 
    For zsh users
 
-   `source venv/bin/activate.zsh`
+   ```shell 
+   source venv/bin/activate.zsh
+   ```
 
    For bash users
 
-   `source venv/bin/activate.bash`
+   ```shell
+   source venv/bin/activate.bash
+   ```
 
    For fish users
 
-   `source venv/bin/activate.fish`
+   ```shell
+   source venv/bin/activate.fish
+   ```
+
 5. Cd into the src folder
 
-   `cd src`
+   ```shell
+   cd src
+   ```
+
 6. Install the required packages
 
-   `python -m pip install -r requirements.txt`
+   ```shell
+   python -m pip install -r requirements.txt
+   ```
+
 7. Start the app
 
    ```shell

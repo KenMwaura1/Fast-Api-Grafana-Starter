@@ -13,7 +13,7 @@ services:
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
     networks:
-      - host
+      - grafana
 
   grafana:
     image: grafana/grafana
@@ -23,11 +23,11 @@ services:
     volumes:
       - grafana_data:/var/lib/grafana
     networks:
-      - host
+      - grafana
 
 networks:
-  host:
-    external: true
+  grafana:
+  
 
 volumes:
   prometheus_data:
