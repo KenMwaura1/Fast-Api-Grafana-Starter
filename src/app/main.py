@@ -41,15 +41,20 @@ api_request_counter = Counter("api_request_counter", "Request processing time", 
 async def get_notes():
     api_request_counter.labels(method="GET", endpoint="/notes", http_status=200).inc()
     api_request_summary.labels(method="GET", endpoint="/notes").observe(0.1)
-    return await notes.get_notes()
+    return await notes.read_all_notes()
 
 
 @app.get("/notes/{id}")
 async def get_note_by_id(id: int):
     api_request_counter.labels(method="GET", endpoint="/notes/{id}", http_status=200).inc()
     api_request_summary.labels(method="GET", endpoint="/notes/{id}").observe(0.1)
-    return await notes.get_note_by_id(id)
+    return await notes.read_note(id)
 
+@app.post("/notes")
+async def create_note():
+    api_request_counter.labels(method="POST", endpoint="/notes", http_status=200).inc()
+    api_request_summary.labels(method="POST", endpoint="/notes").observe(0.1)
+    return await notes.create_note()
 
 
 @app.on_event("startup")
