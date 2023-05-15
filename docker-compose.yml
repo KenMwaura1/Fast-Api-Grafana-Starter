@@ -12,6 +12,8 @@ services:
       - "8002:8000"
     environment:
       - DATABASE_URL=postgresql://hello_fastapi:hello_fastapi@db/hello_fastapi_dev
+    depends_on:
+      - db
   db:
     image: postgres:13.1-alpine
     volumes:
@@ -20,6 +22,9 @@ services:
       - POSTGRES_USER=hello_fastapi
       - POSTGRES_PASSWORD=hello_fastapi
       - POSTGRES_DB=hello_fastapi_dev
+    
+    ports:
+      - "5432:5432"
 
 volumes:
   postgres_data:
