@@ -13,7 +13,7 @@ services:
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
     networks:
-      - grafana
+      - hello_fastapi
 
   grafana:
     image: grafana/grafana
@@ -23,10 +23,10 @@ services:
     volumes:
       - grafana_data:/var/lib/grafana
     networks:
-      - grafana
+      - hello_fastapi
 
 networks:
-  grafana:
+  hello_fastapi:
   
 
 volumes:
