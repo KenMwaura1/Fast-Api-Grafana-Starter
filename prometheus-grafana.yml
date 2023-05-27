@@ -1,6 +1,6 @@
 # compose file to run prometheus and grafana containers using a sinlge network and volume
 # to allow them to communicate and share data
-version: '3.7'
+version: '3.8'
 
 services:
   prometheus:
