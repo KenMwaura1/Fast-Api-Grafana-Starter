@@ -19,7 +19,7 @@ This project is a fork of my [Fast-Api-example](https://github.com/KenMwaura1/Fa
 
 ## Accompanying Article
 
---TODO--
+[Read Article here](https://dev.to/ken_mwaura1/getting-started-monitoring-a-fastapi-app-with-grafana-and-prometheus-a-step-by-step-guide-3fbn)
 
 ## Installation method 1 (Run application locally)
 
