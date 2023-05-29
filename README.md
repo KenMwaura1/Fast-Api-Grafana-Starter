@@ -21,6 +21,8 @@ This project is a fork of my [Fast-Api-example](https://github.com/KenMwaura1/Fa
 
 [Read Article here](https://dev.to/ken_mwaura1/getting-started-monitoring-a-fastapi-app-with-grafana-and-prometheus-a-step-by-step-guide-3fbn)
 
+[Hashnode Article](https://zoo.hashnode.dev/getting-started-monitoring-a-fastapi-app-with-grafana-and-prometheus-a-step-by-step-guide)
+
 ## Installation method 1 (Run application locally)
 
 1. Clone this Repo
