@@ -5,7 +5,7 @@
 
 [![Twitter](https://badgen.net/badge/icon/twitter?icon=twitter&label=Follow&on)](https://twitter.com/Ken_Mwaura1)
 
-This repository contains code for asynchronous example api using the [Fast Api framework](https://fastapi.tiangolo.com/) ,Uvicorn server and Postgres Database to perform crud operations on notes. It also contains a docker-compose file to spin up the containers locally. This is a starter project for anyone looking to get started with Fast Api and Grafana for monitoring using Prometheus. 
+This repository contains code for asynchronous example api using the [Fast Api framework](https://fastapi.tiangolo.com/) ,Uvicorn server and Postgres Database to perform crud operations on notes. It also contains a docker-compose file to spin up the containers locally. This is a starter project for anyone looking to get started with Fast Api and Grafana for monitoring using Prometheus.
 
 This project is a fork of my [Fast-Api-example](https://github.com/KenMwaura1/Fast-Api-example) repository. The only difference is that this repository uses [Grafana](https://grafana.com/) for monitoring using [Prometheus](https://prometheus.io/) and [Loki](https://grafana.com/oss/loki/) for logging. The [Grafana](https://grafana.com/) dashboard is available in the [grafana](grafana) folder.
 
@@ -27,13 +27,13 @@ This project is a fork of my [Fast-Api-example](https://github.com/KenMwaura1/Fa
 
 1. Clone this Repo
 
-   ```shell 
+   ```shell
    git clone https://github.com/KenMwaura1/Fast-Api-Grafana-Starter
    ```
 
 2. Cd into the Fast-Api folder
 
-   ```shell 
+   ```shell
    cd Fast-Api-Grafana-Starter
    ```
 
@@ -45,13 +45,13 @@ This project is a fork of my [Fast-Api-example](https://github.com/KenMwaura1/Fa
 
 4. Activate virtualenv
 
-   ```shell 
+   ```shell
    source venv/bin/activate
    ```
 
    For zsh users
 
-   ```shell 
+   ```shell
    source venv/bin/activate.zsh
    ```
 
