@@ -38,37 +38,15 @@ app.add_middleware(
 
 # Define a counter metric
 REQUESTS_COUNT = Counter(
-    "requests_total", "Total number of requests", ["method", "endpoint", "status_code"]
+    "requests_count", "Total number of requests"
 )
+
 # Define a histogram metric
-REQUESTS_TIME = Histogram("requests_time", "Request processing time", ["method", "endpoint"])
-api_request_summary = Histogram("api_request_summary", "Request processing time", ["method", "endpoint"])
-api_request_counter = Counter("api_request_counter", "Request processing time", ["method", "endpoint", "http_status"])
+REQUESTS_LATENCY = Histogram(
+    "requests_latency_seconds", "Request latency in seconds"
+)
 
-
-
-@app.get("/notes")
-async def get_notes():
-    api_request_counter.labels(method="GET", endpoint="/notes", http_status=200).inc()
-    api_request_summary.labels(method="GET", endpoint="/notes").observe(0.1)
-    return await notes.read_all_notes()
-
-
-@app.get("/notes/{id}")
-async def get_note_by_id(id: int):
-    api_request_counter.labels(method="GET", endpoint="/notes/{id}", http_status=200).inc()
-    api_request_summary.labels(method="GET", endpoint="/notes/{id}").observe(0.1)
-    return await notes.read_note(id)
-
-@app.post("/notes")
-async def create_note():
-    api_request_counter.labels(method="POST", endpoint="/notes", http_status=200).inc()
-    api_request_summary.labels(method="POST", endpoint="/notes").observe(0.1)
-    return await notes.create_note()
-
-
-
-
-app.include_router(ping.router, tags=["ping"],  responses={404: {"description": "Not found"}})
-app.include_router(notes.router, prefix="/notes", tags=["notes"],  responses={404: {"description": "Not found"}})
+# Include your routers
+app.include_router(ping.router, prefix="/ping")
+app.include_router(notes.router, prefix="/notes")
 
