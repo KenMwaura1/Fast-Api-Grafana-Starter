@@ -16,6 +16,7 @@ more-itertools
 packaging
 prometheus-fastapi-instrumentator
 prometheus-client
+psycopg2-binary
 pluggy
 python-dotenv
 pytz
