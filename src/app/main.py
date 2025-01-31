@@ -2,13 +2,23 @@ from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
 from prometheus_fastapi_instrumentator import Instrumentator
 from prometheus_client import Counter, Histogram
+from contextlib import asynccontextmanager
 
-from app.api import notes, ping
+from app.api import ping, notes
 from app.db import engine, metadata, database
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    await database.connect()
+    yield
+    await database.disconnect()
+
 
 metadata.create_all(engine)
 
-app = FastAPI()
+
+app = FastAPI(lifespan=lifespan)
 Instrumentator().instrument(app).expose(app)
 
 origins = [
@@ -57,14 +67,6 @@ async def create_note():
     return await notes.create_note()
 
 
-@app.on_event("startup")
-async def startup():
-    await database.connect()
-
-
-@app.on_event("shutdown")
-async def shutdown():
-    await database.disconnect()
 
 
 app.include_router(ping.router, tags=["ping"],  responses={404: {"description": "Not found"}})
