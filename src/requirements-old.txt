@@ -17,6 +17,7 @@ packaging
 prometheus-fastapi-instrumentator
 prometheus-client
 pluggy
+python-dotenv
 pytz
 pydantic
 pylint
