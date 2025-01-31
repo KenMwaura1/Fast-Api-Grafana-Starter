@@ -65,6 +65,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
       - name: image digest
-        run: echo ${{ steps.build-and-push.outputs.digest }}
+        run: echo ${{ steps.build_and_push.outputs.digest }}
       - name: image digest
-        run: echo ${{ steps.build-and-push.outputs.digest }}
+        run: echo ${{ steps.build_and_push.outputs.digest }}
