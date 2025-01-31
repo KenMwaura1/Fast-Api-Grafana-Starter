@@ -3,7 +3,7 @@ import uvicorn
 
 host="0.0.0.0"
 port=8002
-app_name="app.main:app"
+app="app.main:app"
 
 
 
