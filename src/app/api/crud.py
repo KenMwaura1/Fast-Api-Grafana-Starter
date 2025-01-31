@@ -5,8 +5,9 @@ from datetime import datetime as dt
 
 async def post(payload: NoteSchema):
     created_date = dt.now().strftime("%Y-%m-%d %H:%M")
-    query = notes.insert().values(title=payload.title, 
-    description=payload.description, completed=payload.completed, created_date=created_date)
+    print(payload)
+    query = notes.insert().values(title=payload.title, description=payload.description, 
+                                  completed=payload.completed, created_date=created_date)
     return await database.execute(query=query)
 
 async def get(id: int):
