@@ -3,6 +3,7 @@ from app.api.models import NoteDB, NoteSchema
 from fastapi import APIRouter, HTTPException, Path
 from typing import List 
 from datetime import datetime as dt
+
 router = APIRouter()
 
 
@@ -19,7 +20,7 @@ async def create_note(payload: NoteSchema):
         "created_date": created_date,
     }
     return response_object
-    
+
 @router.get("/{id}/", response_model=NoteDB)
 async def read_note(id: int = Path(..., gt=0),):
     note = await crud.get(id)

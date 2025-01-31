@@ -21,19 +21,19 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker-compose build --no-cache --force-rm 
+      run: docker compose build --no-cache --force-rm 
   test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Test the Docker image
-        run: docker-compose up -d
+        run: docker compose up -d
   prom-grafana-test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Test the Docker image
-        run: docker-compose -f prometheus-grafana.yml up -d
+        run: docker compose -f prometheus-grafana.yml up -d
   push_to_registry:
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
@@ -65,6 +65,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
       - name: image digest
-        run: echo ${{ steps.build-and-push.outputs.digest }}
+        run: echo ${{ steps.build_and_push.outputs.digest }}
       - name: image digest
-        run: echo ${{ steps.build-and-push.outputs.digest }}
+        run: echo ${{ steps.build_and_push.outputs.digest }}

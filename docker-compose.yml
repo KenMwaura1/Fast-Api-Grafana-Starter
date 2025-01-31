@@ -28,7 +28,7 @@ services:
   
   prometheus:
     image: prom/prometheus
-    container_name: prometheus
+    container_name: prom
     ports:
       - "9090:9090"
     volumes:
@@ -39,7 +39,7 @@ services:
 
   grafana:
     image: grafana/grafana
-    container_name: grafana
+    container_name: grafana-1
     ports:
       - "3000:3000"
     volumes:

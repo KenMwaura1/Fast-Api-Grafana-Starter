@@ -19,7 +19,7 @@ async def get_notes(url):
         await asyncio.sleep(2)  # Delay for 5 seconds before sending the next request
 
 async def main():
-    urls = ["http://localhost:8002/notes/", "http://localhost:8002/notes/32"]  # Replace with your desired URLs
+    urls = ["http://localhost:8001/notes/", "http://localhost:8001/notes/32"]  # Replace with your desired URLs
 
     tasks = []
     for url in urls:
