@@ -7,16 +7,13 @@ from contextlib import asynccontextmanager
 from app.api import ping, notes
 from app.db import engine, metadata, database
 
-
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     await database.connect()
     yield
     await database.disconnect()
 
-
 metadata.create_all(engine)
-
 
 app = FastAPI(lifespan=lifespan)
 Instrumentator().instrument(app).expose(app)
@@ -36,17 +33,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Define a counter metric
-REQUESTS_COUNT = Counter(
-    "requests_count", "Total number of requests"
-)
-
-# Define a histogram metric
-REQUESTS_LATENCY = Histogram(
-    "requests_latency_seconds", "Request latency in seconds"
-)
-
 # Include your routers
-app.include_router(ping.router, prefix="/ping")
+app.include_router(ping.router)
 app.include_router(notes.router, prefix="/notes")
 
