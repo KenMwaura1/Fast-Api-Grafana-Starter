@@ -17,7 +17,7 @@ packaging
 prometheus-fastapi-instrumentator
 prometheus-client
 pluggy
-py
+pytz
 pydantic
 pylint
 pyparsing 
